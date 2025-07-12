@@ -1,0 +1,35 @@
+[project]
+name = "effective_python"
+version = "0.1.0"
+description = "Part of Effective Python with AI assistant O'Reilly live course."
+authors = [{ name = "Fernando J. Vieira" }]
+dependencies = []
+requires-python = ">=3.13"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.1", 
+  "pytest-cov>=6.0.0", 
+  "mypy>=1.15.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.pdm]
+distribution = false
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+show_column_numbers = true
+show_error_codes = true
+pretty = true
+files = ["src"]
