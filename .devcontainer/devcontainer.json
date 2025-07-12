@@ -3,7 +3,7 @@
 	"image": "mcr.microsoft.com/devcontainers/python:3.13",
 
     "features": {
-        "ghcr.io/devcontainers-contrib/features/pdm:1": {}
+        "ghcr.io/devcontainers-extra/features/pdm:2": {}
     },
 	"postCreateCommand": "pdm install --prod --no-lock",
 	// Configure tool-specific properties.
