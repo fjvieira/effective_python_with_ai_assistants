@@ -1,0 +1,22 @@
+{
+	"name": "Effective-Python-With-AI",
+	"image": "mcr.microsoft.com/devcontainers/python:3.13",
+
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/pdm:1": {}
+    },
+	"postCreateCommand": "pdm install --prod --no-lock",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			],
+			"settings": {
+				"locale": "en"
+			}
+		}
+	}
+
+}

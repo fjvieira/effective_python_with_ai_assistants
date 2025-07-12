@@ -1,0 +1,58 @@
+# Python #
+###########
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Pytest
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Tox
+.tox/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# PDM
+.pdm-build/
+.pdm.toml
+__pypackages__/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDEs / Editors #
+##################
+
+### VS Code ###
+.vscode/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.pdm-python
