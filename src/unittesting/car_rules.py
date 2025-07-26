@@ -1,0 +1,47 @@
+from enum import Enum
+from datetime import date, timedelta
+
+class CarRules:
+    class FuelType(Enum):
+        GASOLINE = "GASOLINE"
+        ALCOHOL = "ALCOHOL"
+
+    class TripType(Enum):
+        CITY = "CITY"
+        HIGHWAY = "HIGHWAY"
+
+    def should_schedule_review(self, current_odometer: int, last_revision_odometer: int, last_revision_date: date) -> bool:
+        kilometers = current_odometer - last_revision_odometer
+
+        kilometers_check = kilometers >= 10000
+
+        # Check if 12 months have passed
+        # Add 1 year to last_revision_date and see if it's before or same as today
+        # This handles month lengths and leap years correctly.
+        twelve_months_later = last_revision_date.replace(year=last_revision_date.year + 1)
+        months_check = twelve_months_later <= date.today()
+
+        return months_check or kilometers_check
+
+    def calculate_true_efficiency(self, distance_traveled: float, fuel_consumed: float, fuel_type: FuelType, trip_type: TripType) -> float:
+        if fuel_consumed <= 0:
+            raise ValueError("Fuel consumed must be greater than zero.")
+
+        base_efficiency = self._get_base_efficiency(fuel_type, trip_type)
+
+        if base_efficiency == 0: # Avoid division by zero if base_efficiency could be zero
+            return float('inf') if distance_traveled > 0 else 0.0
+
+        actual_efficiency = distance_traveled / fuel_consumed
+        return actual_efficiency / base_efficiency
+
+    def calculate_autonomy(self, fuel_in_tank: float, fuel_type: FuelType, trip_type: TripType) -> float:
+        efficiency = self._get_base_efficiency(fuel_type, trip_type)
+        return fuel_in_tank * efficiency
+
+    def _get_base_efficiency(self, fuel_type: FuelType, trip_type: TripType) -> float:
+        if fuel_type == CarRules.FuelType.GASOLINE:
+            return 12 if trip_type == CarRules.TripType.CITY else 15
+        elif fuel_type == CarRules.FuelType.ALCOHOL:
+            return 8 if trip_type == CarRules.TripType.CITY else 10
+        return 0.0 # Should not happen with enum inputs
