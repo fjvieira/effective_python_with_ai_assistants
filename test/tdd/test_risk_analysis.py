@@ -1,9 +1,6 @@
 import pytest
-from src.tdd.risk_analysis import RiskAnalysis
-
-@pytest.fixture
-def analysis():
-    return RiskAnalysis()
-
-def test_risk_analysis_instantiation(analysis):
-    assert isinstance(analysis, RiskAnalysis)
+from src.tdd.risk_analysis import CompromisedIncome, CreditScore, LoanRisk
+ 
+def test_compromised_income_enum():
+    assert CompromisedIncome.LESS_THAN_15_PERCENT.value == "LessThan15Percent"
+    assert CompromisedIncome.MORE_THAN_15_PERCENT.value == "MoreThan15Percent"
