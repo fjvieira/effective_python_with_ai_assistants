@@ -42,7 +42,21 @@ pdm run pytest -vv
 
 ## Exercises
 
-TBD
+The links below point to the Python source and test files.
+
+- Explain:
+  - [A](src/explain/a.py)
+  - [B](src/explain/b.py)
+- Write:
+  - [DNA](src/write/dna.py)
+  - [LoyaltyProgram](src/write/loyalty_program.py)
+- Unit testing:
+  - [CarRules](src/unittesting/car_rules.py) and [CarRulesTest](test/unittesting/test_car_rules.py)
+- TDD:
+  - [SingleStreetController](src/tdd/single_street_controller.py) and [SingleStreetControllerTest](test/tdd/test_single_street_controller.py)
+  - [RiskAnalysis](src/tdd/risk_analysis.py) and [RiskAnalysisTest](test/tdd/test_risk_analysis.py)
+  - [LoyaltyProgramRules](src/tdd/loyalty_program_rules.py) and [LoyaltyProgramRulesTest](test/tdd/test_loyalty_program_rules.py)
+  - [Insurance](src/tdd/insurance.py) and [InsuranceTest](test/tdd/test_insurance.py)
 
 ## License
 
