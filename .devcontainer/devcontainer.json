@@ -5,7 +5,7 @@
     "features": {
         "ghcr.io/devcontainers-extra/features/pdm:2": {}
     },
-	"postCreateCommand": "pdm install --prod --no-lock",
+	"postCreateCommand": "pdm install --no-lock",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
