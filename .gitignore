@@ -47,9 +47,6 @@ __pypackages__/
 # IDEs / Editors #
 ##################
 
-### VS Code ###
-.vscode/
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
