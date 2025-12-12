@@ -1,4 +1,5 @@
 {
+    "python.defaultInterpreterPath": ".venv/Scripts/python",
     "python.testing.pytestArgs": [
         "test"
     ],
