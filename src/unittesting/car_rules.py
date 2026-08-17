@@ -1,5 +1,5 @@
-from enum import Enum
 from datetime import datetime
+from enum import Enum
 
 
 class CarRules:
@@ -46,6 +46,6 @@ class CarRules:
     def _get_base_efficiency(self, fuel_type: FuelType, trip_type: TripType) -> float:
         if fuel_type == CarRules.FuelType.GASOLINE:
             return 12 if trip_type == CarRules.TripType.CITY else 15
-        elif fuel_type == CarRules.FuelType.ALCOHOL:
+        if fuel_type == CarRules.FuelType.ALCOHOL:
             return 8 if trip_type == CarRules.TripType.CITY else 10
         return 0.0

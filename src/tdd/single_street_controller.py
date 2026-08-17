@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class SingleStreetController:
     class PedestrianLight(Enum):
         RED = "RED"

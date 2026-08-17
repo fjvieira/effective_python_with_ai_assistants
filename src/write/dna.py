@@ -1,5 +1,5 @@
 
-seq = "AACCGGTTTAACCGGTGTAACCGGTCTAACCGGTTTA"
+SEQ = "AACCGGTTTAACCGGTGTAACCGGTCTAACCGGTTTA"
 
 def print_output(value: str):
     print(f"Output: {value}")

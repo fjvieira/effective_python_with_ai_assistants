@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class Tier(Enum):
 
     BRONZE = "Bronze"

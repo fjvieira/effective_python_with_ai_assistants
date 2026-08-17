@@ -1,14 +1,14 @@
-def find_number_of_lands(self, grid):
+def find_number_of_lands(grid: list[list[int]]) -> int:
     num = 2
-    for x in range(0, len(grid)):
-        for y in range(0, len(grid[x])):
-            if (grid[x][y] == 1):
+    for x, row in enumerate(grid):
+        for y, cell in enumerate(row):
+            if cell == 1:
                 num += 1
                 _mark_neighboring_lands(grid, x, y, num)
 
     return num - 2
 
-def _mark_neighboring_lands(grid, x, y, num):
+def _mark_neighboring_lands(grid: list[list[int]], x: int, y: int, num: int) -> None:
     if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]) or grid[x][y] != 1:
         return
     grid[x][y] = num

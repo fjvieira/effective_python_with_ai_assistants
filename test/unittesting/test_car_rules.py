@@ -1,6 +1,10 @@
 from datetime import date
+
 import pytest
+
+
 from src.unittesting.car_rules import CarRules
+
 
 @pytest.fixture
 def car_rules():
