@@ -1,5 +1,7 @@
 import pytest
+
 from src.tdd.insurance import Insurance
+
 
 @pytest.fixture
 def insurance():

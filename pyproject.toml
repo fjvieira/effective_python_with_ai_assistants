@@ -14,9 +14,11 @@ build-backend = "setuptools.build_meta"
 
 [dependency-groups]
 dev = [
-  "pytest>=8.4.1", 
-  "pytest-cov>=6.0.0", 
-  "mypy>=1.15.0"
+    "pytest>=8.4.1",
+    "pytest-cov>=6.0.0",
+    "mypy>=1.15.0",
+    "ruff>=0.16.1",
+    "pylint>=4.0.7",
 ]
 
 [tool.pytest.ini_options]
@@ -26,6 +28,13 @@ pythonpath = ["src"]
 [tool.pdm]
 distribution = false
 
+[tool.pdm.scripts]
+test = "python -m pytest test/ -v"
+coverage = "python -m pytest test/ --cov src/ --cov-report term-missing -v"
+mypy = "python -m mypy src/"
+ruff = "python -m ruff check src/"
+ruff_fix = "python -m ruff check --fix src/"
+
 [tool.mypy]
 python_version = "3.13"
 strict = true
@@ -33,3 +42,14 @@ show_column_numbers = true
 show_error_codes = true
 pretty = true
 files = ["src"]
+
+[tool.pylint]
+disable = [
+    "C0114",
+    "C0115",
+    "C0116",
+    "R0903",
+    "R0801",
+    "W0611",
+    "W0621"
+]

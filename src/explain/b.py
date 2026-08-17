@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 class B:
     @staticmethod
     def solution(a: list[int]) -> int:
@@ -7,10 +8,10 @@ class B:
             return -1
 
         edge = len(a) // 2
-        frequency = Counter()
+        frequency: Counter[int] = Counter()
         dominator = None
 
-        for i, num in enumerate(a):
+        for _, num in enumerate(a):
             frequency[num] += 1
             if frequency[num] > edge:
                 dominator = num

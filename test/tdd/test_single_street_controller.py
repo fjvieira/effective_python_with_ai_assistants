@@ -1,4 +1,5 @@
 import pytest
+
 from src.tdd.single_street_controller import SingleStreetController
 
 @pytest.fixture

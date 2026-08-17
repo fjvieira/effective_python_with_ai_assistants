@@ -1,15 +1,21 @@
-class Node:
-    def __init__(self, value, previous=None, next_node=None):
+class Node[T]:
+    def __init__(
+        self,
+        value: T,
+        previous: "Node[T] | None" = None,
+        next_node: "Node[T] | None" = None,
+    ) -> None:
         self.value = value
         self.previous = previous
         self.next_node = next_node
 
-class A:
-    def __init__(self):
-        self.head = None
-        self.tail = None
 
-    def append_to_tail(self, value):
+class A[T]:
+    def __init__(self) -> None:
+        self.head: Node[T] | None = None
+        self.tail: Node[T] | None = None
+
+    def append_to_tail(self, value: T) -> None:
         n_node = Node(value, previous=self.tail)
         if self.head is None:
             self.head = n_node
@@ -19,7 +25,7 @@ class A:
 
         self.tail = n_node
 
-    def append_to_head(self, value):
+    def append_to_head(self, value: T) -> None:
         n_node = Node(value, next_node=self.head)
         if self.tail is None:
             self.tail = n_node
@@ -29,13 +35,13 @@ class A:
 
         self.head = n_node
 
-    def peek_tail(self):
+    def peek_tail(self) -> T | None:
         return self.tail.value if self.tail is not None else None
 
-    def peek_head(self):
+    def peek_head(self) -> T | None:
         return self.head.value if self.head is not None else None
 
-    def pull_tail(self):
+    def pull_tail(self) -> T | None:
         if self.tail is None:
             return None
 
@@ -48,7 +54,7 @@ class A:
 
         return old_tail.value
 
-    def pull_head(self):
+    def pull_head(self) -> T | None:
         if self.head is None:
             return None
 
@@ -61,5 +67,5 @@ class A:
 
         return old_head.value
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.head is None
